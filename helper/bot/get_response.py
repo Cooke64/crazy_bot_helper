@@ -64,6 +64,7 @@ def make_keyboard(data_to_keyboard: List[List[str]]) -> InlineKeyboardMarkup:
 
 class Responser:
     BASE = 'http://127.0.0.1:8000/api/'
+    BASE = 'http://localhost:8000/api/'
 
     def __init__(self):
         self.methods = {'get': requests.get, 'post': requests.post,

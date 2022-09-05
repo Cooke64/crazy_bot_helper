@@ -2,8 +2,8 @@ import logging
 
 from aiogram import Bot, Dispatcher, executor, types
 
-from bot import markups
-from bot.get_response import subscribe_country, get_country_doc, \
+import markups
+from get_response import subscribe_country, get_country_doc, \
     print_response_country_doc, Responser, make_data_and_keyboard, \
     send_error_message, make_keyboard
 
