@@ -37,7 +37,7 @@ services:
 
   telebot:
     build:
-      context: ./bot
+      context: tg_bot
       dockerfile: Dockerfile
     depends_on:
       - nginx

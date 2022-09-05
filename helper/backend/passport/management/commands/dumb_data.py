@@ -1,8 +1,9 @@
 import json
 
 from django.core.management.base import BaseCommand
-from passport import models
 import os
+
+from backend.passport import models
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 

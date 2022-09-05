@@ -1,13 +1,19 @@
 import logging
+import os
 
 from aiogram import Bot, Dispatcher, executor, types
+from dotenv import load_dotenv
 
 import markups
 from get_response import subscribe_country, get_country_doc, \
     print_response_country_doc, Responser, make_data_and_keyboard, \
     send_error_message, make_keyboard
 
-TOKEN = '5789236771:AAE-a4HZXEerjkcgeFGMwVEUrk0tFFhDZxw'
+load_dotenv()
+
+default_token = '5789236771:AAE-a4HZXEerjkcgeFGMwVEUrk0tFFhDZxw'
+
+TOKEN = os.getenv('SECRET_KEY', default=default_token)
 
 logging.basicConfig(level=logging.INFO)
 
@@ -183,4 +189,5 @@ async def get_user_message(message):
         await send_response(message)
 
 
-executor.start_polling(dp, skip_updates=True)
+def run_bot():
+    executor.start_polling(dp, skip_updates=True)
